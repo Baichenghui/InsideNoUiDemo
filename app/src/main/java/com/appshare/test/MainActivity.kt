@@ -15,65 +15,31 @@ import cn.idaddy.android.opensdk.lib.IDYConfig
 import cn.idaddy.android.opensdk.lib.phone.OnGetVerifyCodeCallback
 import cn.idaddy.android.opensdk.lib.user.IDYLoginIdaddyCallback
 import cn.idaddy.android.opensdk.lib.utils.StringUtils
-import cn.idaddy.test.AudioInfoActivity
-import cn.idaddy.test.AudioRankTypeActivity
-import cn.idaddy.test.OrderListActivity
-import cn.idaddy.test.OrderPayParamActivity
+import cn.idaddy.test.*
 import kotlinx.android.synthetic.main.activity_layout.*
 
 class MainActivity : AppCompatActivity() {
     var heh:String = "heh"
     var pushText = ""  //推送的文案
 
+    fun isLogin():Boolean {
+        // 验证用户是否登录
+        IDYConfig.userInfoBean.data?.let {
+            if (it.is_guest) {
+                return false
+            } else {
+                return true
+            }
+        }
+
+        return false
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_layout)
 
         findViewById<TextView>(R.id.prd_textView).text = BuildConfig.outputFileName
-
-        //默认使用手机号登录
-        usesilentlogincheckbox.isChecked = false
-        IDYSdkApi.setUseIdaddyAccountValidate(true)
-        usesilentlogincheckbox.setOnCheckedChangeListener(object : CompoundButton.OnCheckedChangeListener{
-            override fun onCheckedChanged(buttonView: CompoundButton?, isChecked: Boolean) {
-                if (isChecked){
-                    login_with_mobile_cl.visibility = View.INVISIBLE
-                    login_silent_cl.visibility = View.VISIBLE
-                    IDYSdkApi.setUseIdaddyAccountValidate(false)
-                }else{
-                    login_with_mobile_cl.visibility = View.VISIBLE
-                    login_silent_cl.visibility = View.INVISIBLE
-                    IDYSdkApi.setUseIdaddyAccountValidate(true)
-                }
-            }
-        })
-
-        //静默登录
-        login_silent.setOnClickListener {
-            IDYConfig.userInfoBean.data = null
-
-            if (editText_uniqueid.text.toString().isNullOrBlank()){
-                IDYSdkApi.logout()
-                Toast.makeText(this@MainActivity,"uniqueid 不能为空",Toast.LENGTH_SHORT).show()
-            }else{
-                TestConfig.uniquedId = editText_uniqueid.text.toString()
-                IDYCommon.resetAuthorization()
-                IDYCommon.idyTokenInterface?.idyNeedAccessToken()
-                //可直接调用loginIdaddySilent 实现静默绑定登录
-                //IDYSdkApi.loginIdaddySilent("uniqueId", null)
-            }
-
-            Handler().postDelayed(object :Runnable{
-                override fun run() {
-                    IDYConfig.userInfoBean.data?.let {
-                        Toast.makeText(this@MainActivity,"  user_id :"+IDYConfig.userInfoBean.data!!.user_id
-                                + "   nickname :"+IDYConfig.userInfoBean.data!!.nickname
-                                +"    is_vip :"+ IDYConfig.userInfoBean.data!!.is_vip
-                                + "   is_guest :"+IDYConfig.userInfoBean.data!!.is_guest  ,Toast.LENGTH_SHORT).show()
-                    }?: Toast.makeText(this@MainActivity,"用户登录失败",Toast.LENGTH_SHORT).show()
-                }
-            },2000)
-        }
 
         //发送验证码
         sendValidatecode.setOnClickListener {
@@ -146,6 +112,27 @@ class MainActivity : AppCompatActivity() {
         getCategoryAudiolistBtn.setOnClickListener {
             startActivity(Intent(this@MainActivity, AudioListByCategoryIdActivity::class.java)
                     .putExtra("categoryid",editText_audioId.text.toString()))
+        }
+
+        getSearchHotKeyBtn.setOnClickListener {
+            startActivity(Intent(this@MainActivity, SearchHotKeyActivity::class.java))
+        }
+
+        getAudioList_btn.setOnClickListener {
+            startActivity(Intent(this@MainActivity, AudioListBySortKeyActivity::class.java).putExtra("sortKey",editText_sortKey.text.toString()))
+        }
+
+        getAudioList_hotkey_btn.setOnClickListener {
+
+            val islogin = isLogin()
+
+            startActivity(Intent(this@MainActivity, AudioListByHotKeyActivity::class.java).putExtra("hotKey",editText_hotKey.text.toString()))
+        }
+
+        getCode_btn.setOnClickListener {
+
+
+            startActivity(Intent(this@MainActivity, AuthCreateRedeemCodeActivity::class.java).putExtra("redeemCode",editText_code.text.toString()))
         }
 
 

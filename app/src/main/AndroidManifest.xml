@@ -39,6 +39,11 @@
         <activity android:name="cn.idaddy.test.AudioInfoActivity"/>
         <activity android:name="cn.idaddy.test.AudioRankListActivity"/>
         <activity android:name="cn.idaddy.test.AudioRankTypeActivity"/>
+        <activity android:name="cn.idaddy.test.SearchHotKeyActivity"/>
+        <activity android:name="cn.idaddy.test.AudioListByHotKeyActivity"/>
+        <activity android:name="cn.idaddy.test.AudioListBySortKeyActivity"/>
+        <activity android:name="cn.idaddy.test.AuthCreateRedeemCodeActivity"/>
+
 
         <activity android:name="cn.idaddy.test.OrderPayParamActivity"/>
         <activity android:name=".TopicAudioListActivity"/>

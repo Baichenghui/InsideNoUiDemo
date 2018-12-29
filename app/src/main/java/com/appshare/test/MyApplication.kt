@@ -32,7 +32,7 @@ class MyApplication : Application(), IDYTokenInterface {
 //        IDYSdkApi.init(this, true,false)
 
         //Demo为了简单，默认集成了该接口
-        IDYSdkApi.init(this, true,false)
+        IDYSdkApi.init(this, true)
     }
 
 

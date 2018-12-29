@@ -23,66 +23,68 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/isUseloginsinlent"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="2dp"
-            android:enabled="false"
-            android:textColor="@android:color/black"
-            android:text="使用静默登录"
-            app:layout_constraintTop_toBottomOf="@+id/prd_textView"/>
+        <!--<Button-->
+        <!--android:id="@+id/isUseloginsinlent"-->
+        <!--android:layout_width="150dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginEnd="8dp"-->
+        <!--android:layout_marginLeft="8dp"-->
+        <!--android:layout_marginRight="8dp"-->
+        <!--android:layout_marginStart="8dp"-->
+        <!--android:layout_marginTop="2dp"-->
+        <!--android:enabled="false"-->
+        <!--android:textColor="@android:color/black"-->
+        <!--android:text="使用静默登录"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/prd_textView"/>-->
 
-        <CheckBox
-            android:id="@+id/usesilentlogincheckbox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintHorizontal_bias="0"
-            app:layout_constraintBottom_toBottomOf="@+id/isUseloginsinlent"
-            app:layout_constraintLeft_toRightOf="@+id/isUseloginsinlent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/isUseloginsinlent"/>
+        <!--<CheckBox-->
+            <!--android:id="@+id/usesilentlogincheckbox"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--app:layout_constraintHorizontal_bias="0"-->
+            <!--app:layout_constraintBottom_toBottomOf="@+id/isUseloginsinlent"-->
+            <!--app:layout_constraintLeft_toRightOf="@+id/isUseloginsinlent"-->
+            <!--app:layout_constraintRight_toRightOf="parent"-->
+            <!--app:layout_constraintTop_toTopOf="@+id/isUseloginsinlent"/>-->
 
-        <android.support.constraint.ConstraintLayout
-            android:id="@+id/login_silent_cl"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/isUseloginsinlent"
-            android:visibility="invisible">
-            <Button
-                android:id="@+id/login_silent"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="显示静默登录的用户信息"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintVertical_bias="0"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintHorizontal_bias="0"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-            <EditText
-                android:id="@+id/editText_uniqueid"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:hint="请输入用户uniqueid测试"
-                app:layout_constraintBottom_toBottomOf="@+id/text"
-                app:layout_constraintLeft_toRightOf="@+id/login_silent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/text" />
-        </android.support.constraint.ConstraintLayout>
+        <!--<android.support.constraint.ConstraintLayout-->
+            <!--android:id="@+id/login_silent_cl"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--app:layout_constraintTop_toBottomOf="@+id/isUseloginsinlent"-->
+            <!--android:visibility="gone">-->
+            <!--<Button-->
+                <!--android:id="@+id/login_silent"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="显示静默登录的用户信息"-->
+                <!--app:layout_constraintBottom_toBottomOf="parent"-->
+                <!--app:layout_constraintVertical_bias="0"-->
+                <!--app:layout_constraintLeft_toLeftOf="parent"-->
+                <!--app:layout_constraintHorizontal_bias="0"-->
+                <!--app:layout_constraintRight_toRightOf="parent"-->
+                <!--app:layout_constraintTop_toTopOf="parent" />-->
+            <!--<EditText-->
+                <!--android:id="@+id/editText_uniqueid"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginEnd="8dp"-->
+                <!--android:layout_marginStart="8dp"-->
+                <!--android:layout_marginTop="8dp"-->
+                <!--android:hint="请输入用户uniqueid测试"-->
+                <!--app:layout_constraintBottom_toBottomOf="@+id/text"-->
+                <!--app:layout_constraintLeft_toRightOf="@+id/login_silent"-->
+                <!--app:layout_constraintRight_toRightOf="parent"-->
+                <!--app:layout_constraintTop_toTopOf="@+id/text" />-->
+        <!--</android.support.constraint.ConstraintLayout>-->
+
+
 
         <android.support.constraint.ConstraintLayout
             android:id="@+id/login_with_mobile_cl"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/isUseloginsinlent">
+            app:layout_constraintTop_toBottomOf="@+id/prd_textView">
             <EditText
                 android:id="@+id/edit_phoneNumber"
                 android:layout_width="0dp"
@@ -129,54 +131,6 @@
 
 
         <Button
-            android:id="@+id/main_user_logout_button"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="2dp"
-            android:text="退出登录"
-            app:layout_constraintTop_toBottomOf="@+id/login_with_mobile_cl"/>
-
-        <Button
-            android:id="@+id/getOrderlistBtn"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="2dp"
-            android:text="获取订单列表"
-            app:layout_constraintTop_toBottomOf="@+id/main_user_logout_button" />
-
-        <Button
-            android:id="@+id/getAudioRanklistBtn"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="2dp"
-            android:text="获取音频排行榜单"
-            app:layout_constraintTop_toBottomOf="@+id/getOrderlistBtn" />
-
-        <Button
-            android:id="@+id/getCategorylistBtn"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="2dp"
-            android:text="获取分类类型列表"
-            app:layout_constraintTop_toBottomOf="@+id/getAudioRanklistBtn" />
-
-        <Button
             android:id="@+id/getPayParam_btn"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
@@ -186,7 +140,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="2dp"
             android:text="创建订单"
-            app:layout_constraintTop_toBottomOf="@+id/getCategorylistBtn" />
+            app:layout_constraintTop_toBottomOf="@+id/login_with_mobile_cl" />
 
         <EditText
             android:id="@+id/editText_goodsId"
@@ -199,6 +153,74 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="@+id/getPayParam_btn" />
 
+        <Button
+            android:id="@+id/getCode_btn"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="2dp"
+            android:text="兑换"
+            app:layout_constraintTop_toBottomOf="@+id/getPayParam_btn" />
+
+        <EditText
+            android:id="@+id/editText_code"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="兑换码"
+            app:layout_constraintBottom_toBottomOf="@+id/getCode_btn"
+            app:layout_constraintLeft_toRightOf="@+id/getCode_btn"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/getCode_btn" />
+
+        <Button
+            android:id="@+id/getAudioList_hotkey_btn"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="2dp"
+            android:text="关键字搜索"
+            app:layout_constraintTop_toBottomOf="@+id/getCode_btn" />
+
+        <EditText
+            android:id="@+id/editText_hotKey"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="关键字"
+            app:layout_constraintBottom_toBottomOf="@+id/getAudioList_hotkey_btn"
+            app:layout_constraintLeft_toRightOf="@+id/getAudioList_hotkey_btn"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/getAudioList_hotkey_btn" />
+
+        <Button
+            android:id="@+id/getAudioList_btn"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="2dp"
+            android:text="获取作品列表"
+            app:layout_constraintTop_toBottomOf="@+id/getAudioList_hotkey_btn" />
+
+        <EditText
+            android:id="@+id/editText_sortKey"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="排序key(Demo默认:default_sort)"
+            app:layout_constraintBottom_toBottomOf="@+id/getAudioList_btn"
+            app:layout_constraintLeft_toRightOf="@+id/getAudioList_btn"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/getAudioList_btn" />
 
         <Button
             android:id="@+id/getTopicList_btn"
@@ -210,7 +232,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="2dp"
             android:text="专题作品"
-            app:layout_constraintTop_toBottomOf="@+id/getPayParam_btn" />
+            app:layout_constraintTop_toBottomOf="@+id/getAudioList_btn" />
 
         <EditText
             android:id="@+id/editText_topicId"
@@ -278,6 +300,68 @@
             app:layout_constraintLeft_toRightOf="@+id/editText_audioId"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="@+id/getAudioInfo_btn" />
+
+
+        <Button
+            android:id="@+id/main_user_logout_button"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="2dp"
+            android:text="退出登录"
+            app:layout_constraintTop_toBottomOf="@+id/getAudioInfo_btn"/>
+
+        <Button
+            android:id="@+id/getOrderlistBtn"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="2dp"
+            android:text="获取订单列表"
+            app:layout_constraintTop_toBottomOf="@+id/main_user_logout_button" />
+
+        <Button
+            android:id="@+id/getAudioRanklistBtn"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="2dp"
+            android:text="获取音频排行榜单"
+            app:layout_constraintTop_toBottomOf="@+id/getOrderlistBtn" />
+
+        <Button
+            android:id="@+id/getCategorylistBtn"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="2dp"
+            android:text="获取分类类型列表"
+            app:layout_constraintTop_toBottomOf="@+id/getAudioRanklistBtn" />
+
+        <Button
+            android:id="@+id/getSearchHotKeyBtn"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="2dp"
+            android:text="获取搜索热词"
+            app:layout_constraintTop_toBottomOf="@+id/getCategorylistBtn" />
+
 
 
     </android.support.constraint.ConstraintLayout>

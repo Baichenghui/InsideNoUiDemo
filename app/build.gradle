@@ -11,7 +11,7 @@ android {
         minSdkVersion 22
         targetSdkVersion 28
         versionCode 1
-        versionName "1.5.4"
+        versionName "1.5.7"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
@@ -63,5 +63,5 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.0'
     implementation 'com.github.bumptech.glide:okhttp3-integration:4.3.0'
     implementation 'io.jsonwebtoken:jjwt:0.9.1'
-    implementation files('libs/Android_InsideSDK_V1.5.4.jar')
+    implementation files('libs/Android_InsideSDK_V1.5.7.jar')
 }
