@@ -1,11 +1,10 @@
 package cn.idaddy.test
 
-import cn.idaddy.android.opensdk.lib.api.IDYBaseBean
 
 /**
  * Created by journey on 2018/7/27.
  */
-class OrderParamsBean : IDYBaseBean() {
+class OrderParamsBean   {
 
     /**
      * {"orderID":"3477044","paySysID":"pay.idaddy","params":{"sysId":"koudaistory","appId":"idaddy999","tradeNo":"3477044","tradeTs":1538105612,"goodsId":"2610","goodsDesc":"3个月VIP会员","amount":1,"userId":"12703924","deviceId":"null_020000000000","extra":"xiguapi_inside","ts":1538105619,"sign":"7238a731ea94ea31e44f90b35966287a","signType":"md5"}}

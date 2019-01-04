@@ -15,6 +15,7 @@ import cn.idaddy.android.opensdk.lib.IDYConfig
 import cn.idaddy.android.opensdk.lib.phone.OnGetVerifyCodeCallback
 import cn.idaddy.android.opensdk.lib.user.IDYLoginIdaddyCallback
 import cn.idaddy.android.opensdk.lib.utils.StringUtils
+import cn.idaddy.android.opensdk.lib.utils.ToastUtils
 import cn.idaddy.test.*
 import kotlinx.android.synthetic.main.activity_layout.*
 
@@ -135,6 +136,14 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this@MainActivity, AuthCreateRedeemCodeActivity::class.java).putExtra("redeemCode",editText_code.text.toString()))
         }
 
+        getAccessToken.setOnClickListener {
+            val token = IDYSdkApi.getAccessToken()
+            if (token.isNullOrEmpty()) {
+                ToastUtils.showShort(this,"token 为空")
+            } else {
+                startActivity(Intent(this, TokenActivity::class.java).putExtra("token", token))
+            }
+        }
 
 //        //工爸账号验证----------
 //        useIdaddyAccountValidate_box.isChecked = false

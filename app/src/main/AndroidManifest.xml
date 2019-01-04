@@ -43,6 +43,7 @@
         <activity android:name="cn.idaddy.test.AudioListByHotKeyActivity"/>
         <activity android:name="cn.idaddy.test.AudioListBySortKeyActivity"/>
         <activity android:name="cn.idaddy.test.AuthCreateRedeemCodeActivity"/>
+        <activity android:name="cn.idaddy.test.TokenActivity"/>
 
 
         <activity android:name="cn.idaddy.test.OrderPayParamActivity"/>
